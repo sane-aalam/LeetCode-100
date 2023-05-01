@@ -1,8 +1,6 @@
-
-
 /**
- * Definition for a binary tree node.
- * struct TreeNode {
+ * Definition for a binary  node.
+ * struct Node {
  *     int val;
  *     TreeNode *left;
  *     TreeNode *right;
@@ -24,7 +22,7 @@
 
 class Solution {
 public:
-    TreeNode* mergeTrees(TreeNode* root1, TreeNode* root2) {
+    TreeNode* mergeTrees(Node* root1, Node* root2) {
         
         if(root1==nullptr && root2 == nullptr)
             return nullptr;
@@ -36,8 +34,8 @@ public:
         
         root1->val += root2->val;
         
-        root1->left = mergeTrees(root1->left,root2->left);
-        root1->right = mergeTrees(root1->right,root2->right);
+        root1->left = merges(root1->left,root2->left);
+        root1->right = merges(root1->right,root2->right);
         return root1;
     }
 };
